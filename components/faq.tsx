@@ -22,7 +22,7 @@ export function Faq() {
                 <button
                   id={buttonId}
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 py-5 text-start font-serif text-xl leading-8 md:text-2xl"
+                  className="flex w-full flex-col items-center gap-3 py-5 text-center font-serif text-xl leading-8 md:flex-row md:justify-between md:gap-4 md:text-start md:text-2xl"
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   onClick={() => setOpen(expanded ? null : index)}
@@ -39,7 +39,7 @@ export function Faq() {
                 role="region"
                 aria-labelledby={buttonId}
                 hidden={!expanded}
-                className="pb-5 leading-8 text-ink-soft"
+                className="pb-5 text-center leading-8 text-ink-soft md:text-start"
               >
                 {item.a}
               </div>

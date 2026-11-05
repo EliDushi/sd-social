@@ -76,12 +76,12 @@ export function Header() {
           className="border-t border-ink/10 bg-cream px-5 py-6 lg:hidden"
           aria-label="נייד"
         >
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col items-center gap-4 text-center">
             {nav.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block font-serif text-2xl"
+                  className="block text-center font-serif text-2xl"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}

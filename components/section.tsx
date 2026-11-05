@@ -34,12 +34,16 @@ export function SectionHeading({
 }) {
   const centered = align === "center";
   return (
-    <header className={centered ? "mx-auto max-w-2xl text-center" : "max-w-xl text-start"}>
+    <header
+      className={
+        centered ? "mx-auto max-w-2xl text-center" : "mx-auto max-w-xl text-center md:mx-0 md:text-start"
+      }
+    >
       <p className="text-[11px] tracking-[0.28em] text-gold-deep">{eyebrow}</p>
       <h2 className="mt-4 text-4xl leading-tight text-ink md:text-5xl">{title}</h2>
       {lede ? <p className="mt-5 text-lg leading-8 text-ink-soft">{lede}</p> : null}
       <span
-        className={`mt-6 block h-px w-16 bg-gold ${centered ? "mx-auto" : ""}`}
+        className={`mt-6 block h-px w-16 bg-gold ${centered ? "mx-auto" : "mx-auto md:mx-0"}`}
         aria-hidden
       />
     </header>

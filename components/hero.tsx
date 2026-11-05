@@ -10,14 +10,14 @@ export function Hero() {
   return (
     <section id="top" className="px-5 pt-12 pb-16 md:px-8 md:pt-20 md:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-        <div className="rise flex items-start justify-between gap-6">
+        <div className="rise flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-start">
           <div className="min-w-0">
           <p className="text-[11px] tracking-[0.28em] text-gold-deep">{hero.eyebrow}</p>
           <h1 className="mt-5 max-w-xl text-[2.35rem] leading-[1.3] md:text-5xl lg:text-[3.5rem] lg:leading-[1.25]">
             {hero.title}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">{hero.lede}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center gap-3 md:flex-row md:items-stretch">
             <WhatsAppLink>{cta.book}</WhatsAppLink>
             <a
               href="#portfolio"
@@ -26,7 +26,7 @@ export function Hero() {
               {cta.portfolio}
             </a>
           </div>
-          <dl className="mt-10 grid grid-cols-3 gap-3 border-t border-ink/10 pt-6">
+          <dl className="mt-10 grid grid-cols-3 gap-3 border-t border-ink/10 pt-6 text-center md:text-start">
             {assurances.map((item) => (
               <div key={item.label}>
                 <dt className="font-serif text-xl text-gold-deep md:text-2xl">{item.value}</dt>
@@ -38,7 +38,7 @@ export function Hero() {
           <img
             src="/logo.jpg"
             alt="SD Social"
-            className="h-28 w-28 shrink-0 object-cover shadow-[0_18px_40px_-24px_rgba(42,38,34,0.45)] md:h-36 md:w-36"
+            className="order-first h-28 w-28 shrink-0 object-cover shadow-[0_18px_40px_-24px_rgba(42,38,34,0.45)] md:order-none md:h-36 md:w-36"
           />
         </div>
 

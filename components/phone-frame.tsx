@@ -78,7 +78,7 @@ export function PhoneFrame({
         >
           <Play className="size-5 fill-cream" aria-hidden />
         </span>
-        <span className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-ink/70 to-transparent px-4 pt-16 pb-4 text-cream">
+        <span className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-ink/70 to-transparent px-4 pt-16 pb-4 text-center text-cream md:text-start">
           <span className="block font-serif text-lg leading-none">{title}</span>
           {subtitle ? (
             <span className="mt-2 block text-xs tracking-wide text-cream/85">{subtitle}</span>

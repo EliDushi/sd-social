@@ -10,11 +10,11 @@ export function About() {
           <SectionHeading eyebrow={about.eyebrow} title={about.title} align="start" />
           <AboutPhotos />
         </div>
-        <div className="min-w-0 space-y-5 text-lg leading-8 text-ink-soft">
+        <div className="min-w-0 space-y-5 text-center text-lg leading-8 text-ink-soft md:text-start">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <p className="border-s-2 border-gold ps-5 font-serif text-2xl leading-9 text-ink">
+          <p className="border-gold font-serif text-2xl leading-9 text-ink max-md:border-t-2 max-md:pt-5 md:border-s-2 md:ps-5">
             אתם האורחים. אני על הטלפון.
           </p>
         </div>

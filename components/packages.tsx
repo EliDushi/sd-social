@@ -39,7 +39,7 @@ export function Packages() {
               </p>
               <ul className="mt-6 flex-1 space-y-3">
                 {pkg.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 leading-7">
+                  <li key={item} className="flex items-center justify-center gap-2 text-center leading-7 md:items-start md:justify-start md:text-start">
                     <Check className="mt-1.5 size-4 shrink-0 text-gold-deep" aria-hidden />
                     <span>{item}</span>
                   </li>

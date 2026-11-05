@@ -19,8 +19,8 @@ export function Footer() {
   return (
     <footer className="px-5 pt-16 pb-12 md:px-8">
       <div className="mx-auto grid max-w-6xl gap-10 border-t border-ink/10 pt-10 md:grid-cols-[1.3fr_1fr_1fr]">
-        <div>
-          <a href="#top" className="flex items-center gap-3">
+        <div className="text-center md:text-start">
+          <a href="#top" className="flex flex-col items-center gap-3 md:flex-row md:items-center">
             <img
               src="/logo.jpg"
               alt=""
@@ -35,10 +35,10 @@ export function Footer() {
               </span>
             </span>
           </a>
-          <p className="mt-5 max-w-sm leading-7 text-ink-soft">{footer.blurb}</p>
+          <p className="mx-auto mt-5 max-w-sm leading-7 text-ink-soft md:mx-0">{footer.blurb}</p>
         </div>
 
-        <nav aria-label="תחתית">
+        <nav aria-label="תחתית" className="text-center md:text-start">
           <ul className="space-y-2">
             {nav.map((item) => (
               <li key={item.href}>
@@ -50,7 +50,7 @@ export function Footer() {
           </ul>
         </nav>
 
-        <div className="flex flex-col items-start gap-3">
+        <div className="flex flex-col items-center gap-3 md:items-start">
           <a
             href={site.instagramUrl}
             target="_blank"
@@ -69,7 +69,7 @@ export function Footer() {
           ) : null}
         </div>
       </div>
-      <p className="mx-auto mt-10 max-w-6xl text-xs text-ink-soft">
+      <p className="mx-auto mt-10 max-w-6xl text-center text-xs text-ink-soft">
         © 2026 {footer.rights}
       </p>
     </footer>

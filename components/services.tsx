@@ -22,7 +22,7 @@ export function Services() {
           const Icon = icons[service.icon];
           return (
             <li key={service.title} className="border border-ink/10 bg-foam p-6 md:p-8">
-              <Icon className="size-5 text-gold-deep" aria-hidden />
+              <Icon className="mx-auto block size-5 text-gold-deep md:mx-0" aria-hidden />
               <h3 className="mt-5 text-3xl">{service.title}</h3>
               <p className="mt-3 leading-8 text-ink-soft">{service.text}</p>
             </li>

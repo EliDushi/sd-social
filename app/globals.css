@@ -46,6 +46,21 @@ section[id] {
   scroll-margin-top: 6.5rem;
 }
 
+/* Phones: every heading, paragraph, and label sits in the middle. */
+@media (width < 48rem) {
+  main,
+  footer,
+  #mobile-nav {
+    text-align: center;
+  }
+
+  main :where(h1, h2, h3, p, li, dt, dd, blockquote, a, button, span),
+  footer :where(p, li, a, span),
+  #mobile-nav :where(a, span) {
+    text-align: center;
+  }
+}
+
 ::selection {
   background: #e7d3b8;
   color: #2a2622;
