@@ -43,7 +43,7 @@ h3 {
 }
 
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6.5rem;
 }
 
 ::selection {
@@ -71,65 +71,46 @@ section[id] {
   animation: rise 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.photo-stage {
-  position: relative;
-  height: 28rem;
-  margin-top: 2.25rem;
-  perspective: 1400px;
+.photo-sequence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  margin-top: 4.5rem;
+  perspective: 900px;
 }
 
-.crystal-glow {
-  position: absolute;
-  inset: 18% 8%;
-  z-index: 0;
-  background: radial-gradient(circle, rgb(231 211 184 / 0.9), rgb(255 253 249 / 0) 68%);
-  filter: blur(6px);
+.photo-reveal {
+  width: min(11rem, 58vw);
+  opacity: 0;
+  transform: translateY(48px) rotateX(14deg) scale(0.92);
+  transition:
+    opacity 0.7s ease,
+    transform 0.75s cubic-bezier(0.16, 0.8, 0.22, 1);
 }
 
-.photo-tilt {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.45s ease;
+.photo-reveal.is-visible {
+  opacity: 1;
+  transform: rotate(var(--tilt, -5deg)) rotateY(7deg);
 }
 
-.photo-card {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  animation: photo-fly 1.35s cubic-bezier(0.16, 0.8, 0.22, 1) both;
-  animation-delay: var(--delay);
+.photo-reveal:nth-child(even) {
+  --tilt: 5deg;
 }
 
-.photo-pose {
-  position: absolute;
-  top: var(--y);
-  left: var(--x);
-  width: var(--w);
-  margin: 0;
-  transform: translateZ(var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotate(var(--rz));
-  transform-style: preserve-3d;
-}
-
-.photo-float {
-  animation: photo-float var(--float) ease-in-out infinite;
-  animation-delay: calc(var(--delay) + 1.35s);
+.photo-reveal:nth-child(even).is-visible {
+  transform: rotate(var(--tilt)) rotateY(-7deg);
 }
 
 .crystal-slab {
-  position: relative;
   overflow: hidden;
-  padding: 0.55rem 0.55rem 1.15rem;
-  border: 1px solid rgb(255 255 255 / 0.72);
-  border-radius: 1.15rem;
-  background:
-    linear-gradient(155deg, rgb(255 253 249 / 0.58), rgb(255 255 255 / 0.16) 42%, rgb(231 211 184 / 0.28));
+  padding: 0.4rem 0.4rem 0.85rem;
+  border: 1px solid rgb(255 255 255 / 0.8);
+  border-radius: 1rem;
+  background: linear-gradient(160deg, rgb(255 253 249 / 0.92), rgb(255 255 255 / 0.72));
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.92),
-    inset 0 -16px 28px rgb(176 137 88 / 0.16),
-    0 26px 44px -22px rgb(42 38 34 / 0.45);
-  backdrop-filter: blur(16px) saturate(1.45);
+    inset 0 1px 0 rgb(255 255 255 / 0.95),
+    0 18px 32px -20px rgb(42 38 34 / 0.4);
 }
 
 .crystal-slab img {
@@ -137,59 +118,8 @@ section[id] {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 0.7rem;
-  opacity: 0.78;
-}
-
-.crystal-sheen {
-  position: absolute;
-  inset: -30% -10%;
-  background: linear-gradient(100deg, transparent 36%, rgb(255 255 255 / 0.72) 50%, transparent 64%);
-  transform: translateX(-130%);
-  animation: crystal-sheen 6.4s ease-in-out infinite;
-  animation-delay: var(--delay);
-  pointer-events: none;
-}
-
-@keyframes photo-fly {
-  0% {
-    opacity: 0;
-    transform: translate3d(var(--from-x), var(--from-y), -760px) rotateX(34deg) rotateY(var(--spin))
-      scale(0.42);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1);
-  }
-}
-
-@keyframes photo-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-14px);
-  }
-}
-
-@keyframes crystal-sheen {
-  0%,
-  58% {
-    transform: translateX(-130%);
-  }
-
-  100% {
-    transform: translateX(130%);
-  }
-}
-
-@media (min-width: 768px) {
-  .photo-stage {
-    height: 36rem;
-  }
+  border-radius: 0.55rem;
+  filter: saturate(1.22) contrast(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -197,20 +127,13 @@ section[id] {
     scroll-behavior: auto;
   }
 
-  .rise,
-  .photo-card,
-  .photo-float,
-  .crystal-sheen {
+  .rise {
     animation: none;
   }
 
-  .photo-card {
+  .photo-reveal {
     opacity: 1;
     transform: none;
-  }
-
-  .photo-tilt {
     transition: none;
-    transform: none !important;
   }
 }

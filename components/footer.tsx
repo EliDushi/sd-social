@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Phone } from "lucide-react";
 import { displayPhone, footer, nav, phoneHref, site } from "@/lib/site";
 import { WhatsAppLink } from "@/components/whatsapp-link";
@@ -22,12 +21,12 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 border-t border-ink/10 pt-10 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <a href="#top" className="flex items-center gap-3">
-            <Image
-              src="/instagram/profile.jpg"
+            <img
+              src="/logo.jpg"
               alt=""
-              width={44}
-              height={44}
-              className="size-11 shrink-0 object-cover"
+              width={128}
+              height={128}
+              className="size-16 shrink-0 object-cover"
             />
             <span>
               <span className="block font-serif text-xl leading-none font-bold">{site.brand}</span>

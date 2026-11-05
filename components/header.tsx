@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import { cta, nav, site } from "@/lib/site";
@@ -18,14 +17,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-[4.5rem] md:px-8">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-5 md:h-24 md:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <Image
-            src="/instagram/profile.jpg"
+          <img
+            src="/logo.jpg"
             alt="SD Social"
-            width={44}
-            height={44}
-            className="size-11 shrink-0 object-cover"
+            width={160}
+            height={160}
+            className="size-16 shrink-0 object-cover md:size-20"
           />
           <span className="min-w-0">
             <span className="block font-serif text-lg leading-none font-bold whitespace-nowrap">{site.brand}</span>

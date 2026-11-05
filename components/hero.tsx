@@ -11,6 +11,11 @@ export function Hero() {
     <section id="top" className="px-5 pt-12 pb-16 md:px-8 md:pt-20 md:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
         <div className="rise">
+          <img
+            src="/logo.jpg"
+            alt="SD Social"
+            className="mb-6 h-28 w-28 object-cover shadow-[0_18px_40px_-24px_rgba(42,38,34,0.45)] md:h-36 md:w-36"
+          />
           <p className="text-[11px] tracking-[0.28em] text-gold-deep">{hero.eyebrow}</p>
           <h1 className="mt-5 max-w-xl text-[2.35rem] leading-[1.3] md:text-5xl lg:text-[3.5rem] lg:leading-[1.25]">
             {hero.title}

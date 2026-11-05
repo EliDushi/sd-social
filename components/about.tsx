@@ -6,10 +6,7 @@ export function About() {
   return (
     <Section id="about" tone="paper">
       <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <SectionHeading eyebrow={about.eyebrow} title={about.title} align="start" />
-          <AboutPhotos />
-        </div>
+        <SectionHeading eyebrow={about.eyebrow} title={about.title} align="start" />
         <div className="space-y-5 text-lg leading-8 text-ink-soft">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -19,6 +16,7 @@ export function About() {
           </p>
         </div>
       </div>
+      <AboutPhotos />
     </Section>
   );
 }
