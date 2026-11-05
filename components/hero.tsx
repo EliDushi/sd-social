@@ -10,12 +10,8 @@ export function Hero() {
   return (
     <section id="top" className="px-5 pt-12 pb-16 md:px-8 md:pt-20 md:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-        <div className="rise">
-          <img
-            src="/logo.jpg"
-            alt="SD Social"
-            className="mb-6 h-28 w-28 object-cover shadow-[0_18px_40px_-24px_rgba(42,38,34,0.45)] md:h-36 md:w-36"
-          />
+        <div className="rise flex items-start justify-between gap-6">
+          <div className="min-w-0">
           <p className="text-[11px] tracking-[0.28em] text-gold-deep">{hero.eyebrow}</p>
           <h1 className="mt-5 max-w-xl text-[2.35rem] leading-[1.3] md:text-5xl lg:text-[3.5rem] lg:leading-[1.25]">
             {hero.title}
@@ -38,22 +34,28 @@ export function Hero() {
               </div>
             ))}
           </dl>
+          </div>
+          <img
+            src="/logo.jpg"
+            alt="SD Social"
+            className="h-28 w-28 shrink-0 object-cover shadow-[0_18px_40px_-24px_rgba(42,38,34,0.45)] md:h-36 md:w-36"
+          />
         </div>
 
-        <div className="rise relative mx-auto h-[430px] w-full max-w-md md:h-[540px] md:max-w-lg">
+        <div className="rise relative mx-auto h-[340px] w-full max-w-md sm:h-[460px] md:h-[540px] md:max-w-lg">
           <PhoneFrame
             {...sideA}
-            className="absolute top-16 left-0 hidden w-[158px] -rotate-6 opacity-95 md:block"
+            className="absolute top-12 left-0 w-[34%] -rotate-6 sm:top-16 sm:w-[158px]"
           />
           <PhoneFrame
             {...sideB}
-            className="absolute top-20 right-0 hidden w-[158px] rotate-6 opacity-95 md:block"
+            className="absolute top-14 right-0 w-[34%] rotate-6 sm:top-20 sm:w-[158px]"
           />
           <PhoneFrame
             {...featured}
             featured
             autoPlay
-            className="absolute top-0 left-1/2 z-10 w-[210px] -translate-x-1/2 md:w-[228px]"
+            className="absolute top-0 left-1/2 z-10 w-[52%] -translate-x-1/2 sm:w-[210px] md:w-[228px]"
           />
         </div>
       </div>

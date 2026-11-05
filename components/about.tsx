@@ -5,9 +5,12 @@ import { about } from "@/lib/site";
 export function About() {
   return (
     <Section id="about" tone="paper">
-      <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <SectionHeading eyebrow={about.eyebrow} title={about.title} align="start" />
-        <div className="space-y-5 text-lg leading-8 text-ink-soft">
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
+        <div className="min-w-0">
+          <SectionHeading eyebrow={about.eyebrow} title={about.title} align="start" />
+          <AboutPhotos />
+        </div>
+        <div className="min-w-0 space-y-5 text-lg leading-8 text-ink-soft">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -16,7 +19,6 @@ export function About() {
           </p>
         </div>
       </div>
-      <AboutPhotos />
     </Section>
   );
 }

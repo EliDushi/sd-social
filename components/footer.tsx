@@ -17,7 +17,7 @@ export function Footer() {
   const phone = displayPhone();
 
   return (
-    <footer className="px-5 pt-16 pb-28 md:px-8 md:pb-12">
+    <footer className="px-5 pt-16 pb-12 md:px-8">
       <div className="mx-auto grid max-w-6xl gap-10 border-t border-ink/10 pt-10 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <a href="#top" className="flex items-center gap-3">

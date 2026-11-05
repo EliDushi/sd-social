@@ -5,7 +5,6 @@ import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { MobileBar } from "@/components/mobile-bar";
 import { Moments } from "@/components/moments";
 import { Packages } from "@/components/packages";
 import { Portfolio } from "@/components/portfolio";
@@ -29,7 +28,6 @@ export default function Home() {
         <Closing />
       </main>
       <Footer />
-      <MobileBar />
     </>
   );
 }

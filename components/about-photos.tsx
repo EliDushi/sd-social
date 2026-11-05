@@ -21,7 +21,7 @@ const photos = [
   },
 ] as const;
 
-/** Small vivid stills that appear one by one while scrolling. */
+/** Glossy stills that appear in the space under the about heading. */
 export function AboutPhotos() {
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -41,7 +41,7 @@ export function AboutPhotos() {
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.28 },
+      { threshold: 0.35 },
     );
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
@@ -49,10 +49,15 @@ export function AboutPhotos() {
 
   return (
     <ul ref={listRef} className="photo-sequence">
-      {photos.map((photo) => (
-        <li key={photo.src} className="photo-reveal">
+      {photos.map((photo, index) => (
+        <li
+          key={photo.src}
+          className="photo-reveal"
+          style={{ transitionDelay: `${index * 110}ms` }}
+        >
           <div className="crystal-slab">
             <img src={photo.src} alt={photo.alt} />
+            <span className="crystal-sheen" aria-hidden />
           </div>
         </li>
       ))}
